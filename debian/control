@@ -2,8 +2,8 @@ Source: lliurex-ntpdate
 Section: admin
 Priority: optional
 Maintainer: Equipo LliureX <lliurex@gva.es>
-Build-Depends: debhelper (>= 8.0.0), dh-systemd
-Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 10), dh-systemd
+Standards-Version: 4.1.2
 
 Package: lliurex-ntpdate
 Depends: ${shlibs:Depends}, ${misc:Depends}, ntpdate
