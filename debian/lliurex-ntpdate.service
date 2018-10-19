@@ -1,0 +1,12 @@
+[Unit]
+Description=Lliurex tyme synchronization
+DefaultDependencies=yes
+After=dnsmasq.service
+#Conflicts=shutdown.target
+#Before=sysinit.target shutdown.target
+
+[Service]
+ExecStart=/usr/sbin/lliurex-ntpdate
+
+[Install]
+WantedBy=multi-user.target

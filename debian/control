@@ -1,0 +1,14 @@
+Source: lliurex-ntpdate
+Section: admin
+Priority: optional
+Maintainer: Equipo LliureX <lliurex@gva.es>
+Build-Depends: debhelper (>= 8.0.0), dh-systemd
+Standards-Version: 3.9.5
+
+Package: lliurex-ntpdate
+Depends: ${shlibs:Depends}, ${misc:Depends}, ntpdate
+Architecture: all
+Description: nptdate  classroom client
+ This package configure service ntpdate
+ in the classroom client.
+
