@@ -1,24 +1,13 @@
 #!/bin/sh
 set -e
 
-# Template for diversions
-ORIG_FILE="/lib/systemd/system/ntp.service"
-OUR_FILE="/lib/systemd/system/lliurex-ntp.service"
-OUR_PACKAGE="lliurex-ntpdate"
-
 case $1 in 
 	remove|purge|abort-install|disappear)
-		if [ -f "${ORIG_FILE}.diverted" ]; then
-			rm -f "${ORIG_FILE}"
-			dpkg-divert --package ${OUR_PACKAGE} --rename --quiet --remove "${ORIG_FILE}" || true
-		fi
+		systemctl daemon-reload || true
+		systemctl restart ntp.service || true	
 		
 	;;
 	
 esac
-
-systemctl daemon-reload || true
-systemctl restart ntp.service || true
-systemctl enable ntp.service || true
 
 exit 0 

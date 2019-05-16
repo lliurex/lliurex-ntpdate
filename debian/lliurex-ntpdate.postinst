@@ -1,26 +1,14 @@
 #!/bin/sh
 set -e
 
-# Template for diversions
-ORIG_FILE="/lib/systemd/system/ntp.service"
-OUR_FILE="/lib/systemd/system/lliurex-ntp.service"
-OUR_PACKAGE="lliurex-ntpdate"
-
 case $1 in 
 	configure)
-		if dpkg-divert --package ${OUR_PACKAGE} --rename --quiet --add --divert ${ORIG_FILE}.diverted ${ORIG_FILE} ; then
-			ln -fs ${OUR_FILE} ${ORIG_FILE}
-		else
-			echo "Unabe to divert file ${ORIG_FILE}"
-		fi 
+		systemctl daemon-reload || true
+        systemctl restart ntp.service || true
 	;;
 	*)
 		echo "Nothing to do"
 	;; 
 esac
-
-systemctl daemon-reload || true
-systemctl restart ntp.service || true
-systemctl enable ntp.service || true
 
 exit 0 
