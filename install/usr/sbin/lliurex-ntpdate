@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os 
 import subprocess
 import socket
 
 internal_ntp = "server"
-external_ntp = "hora.rediris.es"
+external_ntp = "hora.roa.es"
 gva_ntp = "ntp.gva.es"
 
 ntp_server=external_ntp
@@ -23,7 +23,7 @@ except:
 	pass
 
 
-print "[lliurex-ntpdate] Setting date via %s"%ntp_server
-os.system("ntpdate -s %s"%(ntp_server))
+print("[lliurex-ntpdate] Setting date via {}".format(ntp_server))
+os.system("ntpdate {}".format(ntp_server))
 os.system("hwclock --systohc")
  
