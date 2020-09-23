@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 10), dh-systemd
 Standards-Version: 4.1.2
 
 Package: lliurex-ntpdate
-Depends: ${shlibs:Depends}, ${misc:Depends}, ntpdate
+Depends: ${shlibs:Depends}, ${misc:Depends}, ntpsec-ntpdate
 Architecture: all
 Description: nptdate  classroom client
  This package configure service ntpdate

@@ -1,3 +1,11 @@
+lliurex-ntpdate (0.22) focal; urgency=medium
+
+  * Changed default external server to hora.roa.es (1st stratum)
+  * Python3 changes
+  * Fix ntpdate call for new ntpdate
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 23 Sep 2020 11:47:07 +0200
+
 lliurex-ntpdate (0.21) bionic; urgency=medium
 
   * Override ntp.service conf to force restart
