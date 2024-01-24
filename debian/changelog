@@ -1,3 +1,9 @@
+lliurex-ntpdate (0.23) jammy; urgency=medium
+
+  * Removing old dependency 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 24 Jan 2024 14:10:50 +0100
+
 lliurex-ntpdate (0.22.23) jammy; urgency=medium
 
   * First jammy release 
